@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "servicenow": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "http://localhost:8080/mcp"
+      ],
+      "env": {
+        "PORT": "8080",
+        "SERVICENOW_INSTANCE_URL": "https://gsailearning.service-now.com",
+        "SERVICENOW_API_VERSION": "v1",
+        "SERVICENOW_USERNAME": "admin",
+        "SERVICENOW_PASSWORD": "Accept@2020",
+        "SERVICENOW_AUTH_TYPE": "basic",
+        "SERVICENOW_DEFAULT_SENDER_EMAIL": "gajendra.singh@servicenow.com"
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "server_name": "servicenow",
+  "display_name": "ServiceNow MCP",
+  "version": "1.0.0",
+  "description": "MCP server for ServiceNow email and incident management",
+  "functions": [
+    {
+      "name": "send_email",
+      "description": "Send an email through ServiceNow",
+      "parameters": {
+        "type": ["object"],
+        "required": ["to", "subject", "body"],
+        "properties": {
+          "to": {
+            "type": ["string"],
+            "description": "Email address of the recipient"
+          },
+          "subject": {
+            "type": ["string"],
+            "description": "Subject of the email"
+          },
+          "body": {
+            "type": ["string"],
+            "description": "Body content of the email (can include HTML)"
+          },
+          "from": {
+            "type": ["string"],
+            "description": "Optional sender email address"
+          }
+        }
+      },
+      "returns": {
+        "type": ["object"],
+        "properties": {
+          "status": {
+            "type": ["string"],
+            "enum": ["sent", "error"],
+            "description": "Status of the email sending operation"
+          },
+          "messageId": {
+            "type": ["string"],
+            "description": "ID of the sent message"
+          },
+          "error": {
+            "type": ["string"],
+            "description": "Error message if status is 'error'"
+          },
+          "details": {
+            "type": ["object"],
+            "description": "Additional details about the email record"
+          }
+        }
+      }
+    }
+  ],
+  "authentication": {
+    "type": "basic",
+    "required": true,
+    "description": "ServiceNow authentication credentials"
+  },
+  "contact": {
+    "name": "ServiceNow MCP Admin",
+    "email": "admin@example.com"
+  }
+}

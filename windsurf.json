@@ -1,0 +1,58 @@
+{
+  "name": "servicenow-mcp",
+  "description": "ServiceNow MCP Server with email integration",
+  "type": "mcp",
+  "version": "1.0.0",
+  "mcp": {
+    "server_name": "servicenow",
+    "display_name": "ServiceNow MCP",
+    "description": "MCP server for ServiceNow email and incident management",
+    "icon": "https://developer.servicenow.com/app_store_learnv2_rest_madrid_images_kb_logo_servicenow_icon.png",
+    "category": "ITSM",
+    "tags": ["servicenow", "email", "incident", "itsm", "notification"],
+    "capabilities": ["email", "notification", "incident_management"],
+    "documentation_url": "https://docs.servicenow.com/"
+  },
+  "entry_point": "dist/server/index.js",
+  "environment_variables": [
+    {
+      "name": "SERVICENOW_INSTANCE_URL",
+      "description": "ServiceNow instance URL (e.g., https://instance.service-now.com)",
+      "required": true
+    },
+    {
+      "name": "SERVICENOW_API_VERSION",
+      "description": "ServiceNow API version (e.g., v1)",
+      "default": "v1"
+    },
+    {
+      "name": "SERVICENOW_USERNAME",
+      "description": "ServiceNow username",
+      "required": true
+    },
+    {
+      "name": "SERVICENOW_PASSWORD",
+      "description": "ServiceNow password",
+      "required": true,
+      "secret": true
+    },
+    {
+      "name": "SERVICENOW_DEFAULT_SENDER_EMAIL",
+      "description": "Default email address for sending emails",
+      "required": true
+    },
+    {
+      "name": "PORT",
+      "description": "Port to run the MCP server on",
+      "default": "8080"
+    }
+  ],
+  "resources": {
+    "memory": "512Mi",
+    "cpu": "0.5"
+  },
+  "healthcheck": {
+    "path": "/health",
+    "port": 8080
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "servers": {
+    "servicenow": {
+      "command": "npm",
+      "args": ["start"],
+      "env": {
+        "PORT": "8080",
+        "SERVICENOW_INSTANCE_URL": "https://gsailearning.service-now.com",
+        "SERVICENOW_API_VERSION": "v1",
+        "SERVICENOW_AUTH_TYPE": "basic",
+        "SERVICENOW_USERNAME": "admin",
+        "SERVICENOW_PASSWORD": "Accept@2020",
+        "SERVICENOW_DEFAULT_SENDER_EMAIL": "gajendra.singh@servicenow.com"
+      },
+      "cwd": "/Users/gajendrasingh/MCPs/NowGPT"
+    }
+  },
+  "claude_desktop": {
+    "enable": true,
+    "servers": ["servicenow"]
+  }
+}

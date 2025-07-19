@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ServiceNow": {
+      "type": "file",
+      "path": "/Users/gajendrasingh/MCPs/NowGPT/servicenow-mcp.json"
+    }
+  }
+}
